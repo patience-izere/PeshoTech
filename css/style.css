@@ -1,0 +1,319 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #0d1117; /* Charcoal/near-black */
+    --background-color: #161b22; /* Slightly lighter charcoal */
+    --accent-color: #58a6ff; /* A professional, vibrant blue */
+    --text-color: #c9d1d9; /* Light grey for text */
+    --text-color-secondary: #8b949e; /* Dimmer grey */
+    --border-color: #30363d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #79c0ff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-color-secondary);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header & Navigation */
+header {
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+nav .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 2.5rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.cta-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.cta-primary:hover, .cta-secondary:hover {
+    transform: translateY(-3px);
+}
+
+main {
+    padding: 4rem 0;
+}
+
+section {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Content Blocks */
+.content-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.block, .module, .story {
+    background: var(--background-color);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block:hover, .module:hover, .story:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* How It Works */
+.how-it-works .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    counter-reset: step-counter;
+}
+
+.step {
+    padding: 2rem;
+    position: relative;
+}
+
+.step h3::before {
+    counter-increment: step-counter;
+    content: "0" counter(step-counter);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Testimonials */
+.testimonials {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    text-align: left;
+}
+
+.testimonial {
+    background: var(--background-color);
+    padding: 2rem;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+}
+
+.testimonial cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* Forms */
+.get-started-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 3rem auto;
+    gap: 1.5rem;
+}
+
+.get-started-form input {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.get-started-form button {
+    cursor: pointer;
+}
+
+/* Accordion */
+.faq .accordion-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq .accordion-header {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 1.5rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.faq .accordion-content {
+    padding: 0 1.5rem;
+    background: var(--primary-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+.faq .accordion-content p {
+    padding: 1.5rem 0;
+}
+
+
+/* Footer */
+footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    background: var(--background-color);
+}
+
+.footer-links, .social-media {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a, .social-media a {
+    margin: 0 1.5rem;
+    color: var(--text-color-secondary);
+}
+.footer-links a:hover, .social-media a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    nav {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+}
